@@ -81,6 +81,9 @@ class QuillEditorConfig {
     this.editorKey,
     this.requestKeyboardFocusOnCheckListChanged = false,
     this.textInputAction = TextInputAction.newline,
+    this.enableIMEPersonalizedLearning = true,
+    this.autocorrect = true,
+    this.enableSuggestions,
     this.enableScribble = false,
     this.onScribbleActivated,
     this.scribbleAreaInsets,
@@ -489,6 +492,18 @@ class QuillEditorConfig {
   /// Default to [TextInputAction.newline]
   final TextInputAction textInputAction;
 
+  /// Whether the keyboard may learn from what is typed here. Passed to the
+  /// platform's [TextInputConfiguration]; defaults to `true`, as before.
+  final bool enableIMEPersonalizedLearning;
+
+  /// Whether the keyboard may autocorrect what is typed here. Passed to the
+  /// platform's [TextInputConfiguration]; defaults to `true`, as before.
+  final bool autocorrect;
+
+  /// Whether the keyboard may offer suggestions. When `null` (the default)
+  /// they are on unless the editor is read-only, as before.
+  final bool? enableSuggestions;
+
   /// Enable Scribble? Currently Apple Pencil only, defaults to false.
   final bool enableScribble;
 
@@ -558,6 +573,9 @@ class QuillEditorConfig {
     TextSelectionThemeData? textSelectionThemeData,
     bool? requestKeyboardFocusOnCheckListChanged,
     TextInputAction? textInputAction,
+    bool? enableIMEPersonalizedLearning,
+    bool? autocorrect,
+    bool? enableSuggestions,
     bool? enableScribble,
     void Function()? onScribbleActivated,
     EdgeInsets? scribbleAreaInsets,
@@ -631,6 +649,10 @@ class QuillEditorConfig {
           requestKeyboardFocusOnCheckListChanged ??
           this.requestKeyboardFocusOnCheckListChanged,
       textInputAction: textInputAction ?? this.textInputAction,
+      enableIMEPersonalizedLearning:
+          enableIMEPersonalizedLearning ?? this.enableIMEPersonalizedLearning,
+      autocorrect: autocorrect ?? this.autocorrect,
+      enableSuggestions: enableSuggestions ?? this.enableSuggestions,
       enableScribble: enableScribble ?? this.enableScribble,
       onScribbleActivated: onScribbleActivated ?? this.onScribbleActivated,
       scribbleAreaInsets: scribbleAreaInsets ?? this.scribbleAreaInsets,

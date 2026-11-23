@@ -83,7 +83,11 @@ mixin RawEditorStateTextInputClientMixin on EditorState
           inputType: TextInputType.multiline,
           readOnly: widget.config.readOnly,
           inputAction: widget.config.textInputAction,
-          enableSuggestions: !widget.config.readOnly,
+          enableSuggestions:
+              widget.config.enableSuggestions ?? !widget.config.readOnly,
+          autocorrect: widget.config.autocorrect,
+          enableIMEPersonalizedLearning:
+              widget.config.enableIMEPersonalizedLearning,
           keyboardAppearance: createKeyboardAppearance(),
           textCapitalization: widget.config.textCapitalization,
           allowedMimeTypes: widget.config.contentInsertionConfiguration == null

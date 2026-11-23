@@ -335,6 +335,9 @@ class QuillEditorState extends State<QuillEditor>
         scribbleAreaInsets: config.scribbleAreaInsets,
         readOnlyMouseCursor: config.readOnlyMouseCursor,
         textInputAction: config.textInputAction,
+        enableIMEPersonalizedLearning: config.enableIMEPersonalizedLearning,
+        autocorrect: config.autocorrect,
+        enableSuggestions: config.enableSuggestions,
         onPerformAction: config.onPerformAction,
       ),
     );

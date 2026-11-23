@@ -65,6 +65,9 @@ class QuillRawEditorConfig {
     this.dialogTheme,
     this.contentInsertionConfiguration,
     this.textInputAction = TextInputAction.newline,
+    this.enableIMEPersonalizedLearning = true,
+    this.autocorrect = true,
+    this.enableSuggestions,
     this.requestKeyboardFocusOnCheckListChanged = false,
     this.enableScribble = false,
     this.onScribbleActivated,
@@ -410,6 +413,15 @@ class QuillRawEditorConfig {
   final bool requestKeyboardFocusOnCheckListChanged;
 
   final TextInputAction textInputAction;
+
+  /// See `QuillEditorConfig.enableIMEPersonalizedLearning`.
+  final bool enableIMEPersonalizedLearning;
+
+  /// See `QuillEditorConfig.autocorrect`.
+  final bool autocorrect;
+
+  /// See `QuillEditorConfig.enableSuggestions`.
+  final bool? enableSuggestions;
 
   /// Enable Scribble? Currently Apple Pencil only, defaults to false.
   final bool enableScribble;

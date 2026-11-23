@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `QuillEditorConfig.enableIMEPersonalizedLearning`, `QuillEditorConfig.autocorrect` and `QuillEditorConfig.enableSuggestions` (and the same fields on `QuillRawEditorConfig`), which are passed to the platform's `TextInputConfiguration`. The editor built that configuration itself with these fixed to the platform defaults, so an app could not ask the keyboard to stop learning from, autocorrecting or suggesting for the text typed in it. The defaults keep the previous behavior (`true`, `true`, and suggestions on unless the editor is read-only).
+
 ## [11.6.0] - 2026-09-16
 
 ### Added
